@@ -28,7 +28,7 @@ namespace Switcher
             //}
 
             InitializeComponent();
-            this.textBox.Focus();
+            Hide();
 
             HotkeyManager.Current.AddOrReplace("SwitchWindow", Key.H, ModifierKeys.Shift | ModifierKeys.Alt, Show);
         }
@@ -41,15 +41,18 @@ namespace Switcher
             {
                 if (!string.IsNullOrWhiteSpace(process.MainWindowTitle) && (process.MainWindowTitle.ToLower().Contains(ltitle) || process.ProcessName.ToLower().Contains(ltitle)))
                 {
-                    this.WindowState = WindowState.Minimized;
+                    Hide();
                     SwitchToThisWindow(process.MainWindowHandle);
                     break;
                 }
             }
+
+            this.textBox.SelectAll();
         }
 
         private void Show(object sender, HotkeyEventArgs e)
         {
+            this.textBox.Focus();
             this.textBox.Text = string.Empty;
             this.WindowState = WindowState.Normal;
             this.Show();
@@ -64,7 +67,7 @@ namespace Switcher
 
             if (e.Key == Key.Escape)
             {
-                this.WindowState = WindowState.Minimized;
+                Hide();
             }
 
             if (e.Key == Key.Enter && !string.IsNullOrWhiteSpace(this.textBox.Text))
