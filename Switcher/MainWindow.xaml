@@ -1,0 +1,12 @@
+﻿<Window x:Class="Switcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Switcher"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="45" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="Black">
+  <StackPanel Margin="0,0,0,0" HorizontalAlignment="Stretch" >
+    <TextBox x:Name="textBox" HorizontalAlignment="Left" TextAlignment="Center" FontSize="20" HorizontalContentAlignment="Stretch" Height="35" Margin="15,5,15,5" VerticalAlignment="Top" Width="470" BorderBrush="#FFE0E4E4" Background="#FFFFFFFF" KeyUp="TextBox_OnKeyUp" Foreground="Black" />
+  </StackPanel>
+</Window>
